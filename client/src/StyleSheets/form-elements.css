@@ -1,0 +1,15 @@
+input{
+    height: 40px;
+    padding-left: 15px;
+    border: 1px solid #8a8a8a;
+    width: 100%;
+}
+
+input:focus{
+    outline: none;
+    border: 1px solid #373737;
+}
+
+.ant-form-item{
+    margin-bottom: 10px;
+}

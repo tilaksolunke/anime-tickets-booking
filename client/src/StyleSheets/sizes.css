@@ -1,0 +1,31 @@
+.h-screen{
+    height: 100vh;
+}
+
+.w-screen{
+    width: 100w;
+}
+
+.w-full{
+    width: 100%;
+}
+
+.text-sm{
+    font-size: 14px;
+}
+
+.text-md{
+    font-size: 16px;
+}
+
+.text-lg{
+    font-size: 18px;
+}
+
+.text-xl{
+    font-size: 20px;
+}
+
+.border{
+    border-width: 1px;
+}
