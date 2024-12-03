@@ -40,12 +40,28 @@ function ProtectedRoute({ children }) {
       <div className="layout p-1">
         <div className="header bg-primary flex justify-between p-2">
           <div>
-            <h1 className="text-xl text-white">ANISCREEN</h1>
+            <h1
+              className="text-2xl text-white cursor-pointer"
+              onClick={() => navigate("/")}
+            >
+              ANISCREEN
+            </h1>
           </div>
 
           <div className="bg-white p-1 flex gap-1">
             <i class="ri-shield-user-fill text-primary"></i>
-            <h1 className="text-sm">{user.name}</h1>
+            <h1
+              className="text-sm underline"
+              onClick={() => {
+                if (user.isAdmin) {
+                  navigate("/admin");
+                } else {
+                  navigate("/profile");
+                }
+              }}
+            >
+              {user.name}
+            </h1>
 
             <i
               class="ri-logout-box-r-fill ml-1"

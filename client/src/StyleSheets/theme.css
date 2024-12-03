@@ -11,6 +11,13 @@
     background-color: var(--colour-secondary);
 }
 
+.bg-error{
+    background-color: #ff0000;
+}
+
+.bg-warning{
+    background-color: #a2840e;
+}
 .bg-white{
     background-color: white;
 }

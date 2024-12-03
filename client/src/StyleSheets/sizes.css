@@ -29,3 +29,7 @@
 .border{
     border-width: 1px;
 }
+
+.br-1{
+    border-radius: 4px;
+}

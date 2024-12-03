@@ -9,6 +9,8 @@ import "./StyleSheets/custom.css";
 import "./StyleSheets/theme.css";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import { useSelector } from "react-redux";
+import Profile from "./Pages/Profile";
+import Admin from "./Pages/Admin";
 
 function App() {
   const { loading } = useSelector((state) => state.loaders);
@@ -26,6 +28,22 @@ function App() {
             element={
               <ProtectedRoute>
                 <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <Admin />
               </ProtectedRoute>
             }
           />
