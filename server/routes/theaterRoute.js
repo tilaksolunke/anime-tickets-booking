@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const authMiddleware = require("../middlewares/authMiddleware");
 const Theater = require("../models/theaterModel");
+const Show = require("../models/showModel");
 // add theater
 router.post("/add-theater", async (req, res) => {
   try {
@@ -77,6 +78,58 @@ router.post("/delete-theater", async (req, res) => {
     res.send({
       success: true,
       message: "Theater deleted successfully.",
+    });
+  } catch (error) {
+    res.send({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+
+// add shows
+router.post("/add-show", async (req, res) => {
+  try {
+    const newShow = new Show(req.body);
+    await newShow.save();
+    res.send({
+      success: true,
+      message: "Show added successfully.",
+    });
+  } catch (error) {
+    res.send({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+
+// get  all shows by theater
+router.post("/get-all-shows-by-theater", async (req, res) => {
+  try {
+    const shows = await Show.find({ theater: req.body.theaterId }).populate('movie').sort({
+      createdAt: -1,
+    });
+    res.send({
+      success: true,
+      message: "Shows fetched successfully.",
+      data: shows,
+    });
+  } catch (error) {
+    res.send({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+
+// delete show
+router.post("/delete-show", async (req, res) => {
+  try {
+    await Show.findByIdAndDelete(req.body.showId);
+    res.send({
+      success: true,
+      message: "Shows deleted successfully.",
     });
   } catch (error) {
     res.send({
