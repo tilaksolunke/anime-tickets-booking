@@ -38,6 +38,38 @@ thead th{
     text-transform: uppercase;
 }
 
+.search-input{
+    height: 60px;
+    border-radius: 5px;
+}
+
+.divider{
+    border-bottom: 1px solid  #e1e1e1;
+    margin: 5px 0;
+}
+
+/* seats */
+.seat{
+    height: 30px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #b1b1b1;
+    cursor: pointer;
+}
+
+.selected-seat{
+    background-color: #118838;
+}
+.selected-seat h1{
+    color: white !important;
+}
+
+.booked-seat{
+    background-color: #b1b1b1;
+}
+
 /* loader */
 
 .loader-parent{

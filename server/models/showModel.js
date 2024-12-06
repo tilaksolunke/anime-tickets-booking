@@ -32,12 +32,12 @@ const showSchema = new mongoose.Schema(
     },
     theater: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "theater",
+      ref: "theaters",
       required: true,
     },
   },
   { timestamps: true }
 );
 
-const show = mongoose.model("shows", showSchema);
-module.exports = show;
+const Show = mongoose.model("shows", showSchema);
+module.exports = Show;
