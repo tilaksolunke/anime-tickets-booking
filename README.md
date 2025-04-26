@@ -3,4 +3,4 @@ AniScreen is a real-time anime movie ticket booking platform built using React, 
 
 # AniScreen - Anime Movie Ticket Booking
 
-[![Live Demo](https://anime-tickets-booking-2.onrender.com)
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)]([https://your-render-url-here.onrender.com](https://anime-tickets-booking-2.onrender.com))
