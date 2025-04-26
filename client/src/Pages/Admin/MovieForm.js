@@ -71,8 +71,8 @@ function MovieForm({
           </Col>
 
           <Col span={8}>
-            <Form.Item label="Duration" name="duration">
-              <input type="text" />
+            <Form.Item label="Duration (Min)" name="duration">
+              <input type="number" />
             </Form.Item>
           </Col>
 

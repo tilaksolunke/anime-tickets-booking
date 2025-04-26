@@ -103,13 +103,12 @@ function BookShow() {
     }
   };
 
-
   const onToken = async (token) => {
     try {
       dispatch(ShowLoading());
       const response = await MakePayment(
         token,
-        selectedSeats.length * show.ticketPrice * 100,
+        selectedSeats.length * show.ticketPrice * 100
       );
       if (response.success) {
         message.success(response.message);
@@ -132,7 +131,7 @@ function BookShow() {
         {/* show information */}
         <div className="flex justify-between card p-2 items-center">
           <div>
-            <h1 className="text-xl">{show.theater.name}</h1>
+            <h1 className="text-sm">{show.theater.name}</h1>
             <h1 className="text-sm">{show.theater.address}</h1>
           </div>
           <div>
@@ -141,7 +140,7 @@ function BookShow() {
             </h1>
           </div>
           <div>
-            <h1 className="text-xl">
+            <h1 className="text-sm">
               {moment(show.date).format("MMM Do YYYY")} -{" "}
               {moment(show.time, "HH:mm").format("hh:mm A")}
             </h1>
@@ -153,7 +152,15 @@ function BookShow() {
         <div className="flex justify-center mt-2">{getSeats()}</div>
 
         {selectedSeats.length > 0 && (
-          <div className="mt-2 flex justify-center">
+          <div className="mt-2 flex justify-center gap-2 items-center flex-col">
+             <div className="flex justify-center">
+          <div className="flex uppercase card p-2 gap-3">
+            <h1 className="text-sm"><b>Selected Seats</b> : {selectedSeats.join(" , ")}</h1>
+            <h1 className="text-sm">
+              <b>Total Price</b> : {selectedSeats.length * show.ticketPrice}
+            </h1>
+          </div>
+        </div>
             <StripeCheckout
               // currency="INR"
               token={onToken}

@@ -4,8 +4,10 @@
   "description": "AniScreen is a real-time anime movie ticket booking platform built using React, Node.js, Express, MongoDB, Redux, and Ant Design. Designed specifically for anime enthusiasts, it provides a seamless experience for discovering and booking tickets for anime movies and special screenings.",
   "main": "index.js",
   "scripts": {
+    "build": "cd server && npm install  && cd ../client && npm install && npm run build",
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
+},
   "author": "",
   "license": "ISC",
   "dependencies": {

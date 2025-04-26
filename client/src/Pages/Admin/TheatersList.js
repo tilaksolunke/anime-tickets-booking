@@ -63,6 +63,13 @@ function TheatersList() {
       dataIndex: "email",
     },
     {
+      title: "Owner",
+      dataIndex: "owner",
+      render: (text, record) => {
+        return record.owner.name;
+      },
+    },
+    {
       title: "Status",
       dataIndex: "isActive",
       render: (text, record) => {
@@ -79,14 +86,22 @@ function TheatersList() {
       render: (text, record) => {
         return (
           <div className="flex gap-1">
-            {record.isActive && (<span className="underline"
-            onClick={() => handleStatusChange(record)}
-            >Block</span>)}
-            {!record.isActive && (<span className="underline"
-            onClick={() => handleStatusChange(record)}
-            >Approve</span>)}
-
-
+            {record.isActive && (
+              <span
+                className="underline"
+                onClick={() => handleStatusChange(record)}
+              >
+                Block
+              </span>
+            )}
+            {!record.isActive && (
+              <span
+                className="underline"
+                onClick={() => handleStatusChange(record)}
+              >
+                Approve
+              </span>
+            )}
           </div>
         );
       },
